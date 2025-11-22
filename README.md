@@ -12,7 +12,7 @@ This guide assumes you have **nothing installed** and walks you through everythi
 
 ---
 
-## Part 1: Install Prerequisites (5-10 minutes)
+## Part 1: Install Prerequisites
 
 ### Step 1: Install Homebrew (macOS/Linux)
 
@@ -43,20 +43,35 @@ python3 --version
 
 ### Step 3: Clone This Repository
 
-```bash
-# Navigate to where you want the project
-cd ~/Developer  # or wherever you keep projects
+**First, decide where to put the project.** We recommend creating a `Developer` folder in your home directory:
 
-# Clone the repo (replace with your actual repo URL)
-git clone <your-repo-url>
-cd icandoit
+```bash
+# Create a Developer folder (if you don't have one)
+mkdir -p ~/Developer
+
+# Navigate to it
+cd ~/Developer
 ```
 
-Don't have git? Install it:
+**Don't have git?** Install it first:
 
 ```bash
 brew install git
 ```
+
+**Now clone the repository:**
+
+```bash
+# Clone this repo
+git clone https://github.com/valentinozegna/gmail-auto-reply.git
+
+# Navigate into the project folder
+cd gmail-auto-reply
+```
+
+**What just happened?**
+- You now have a folder at `~/Developer/gmail-auto-reply` with all the project files
+- This is where you'll run all the commands for the rest of the setup
 
 ### Step 4: Create Virtual Environment
 
@@ -83,7 +98,7 @@ This installs:
 
 ---
 
-## Part 2: Set Up Google Cloud Project (10 minutes)
+## Part 2: Set Up Google Cloud Project
 
 ### Step 1: Create Google Cloud Project
 
@@ -141,19 +156,19 @@ Click **"Back to Dashboard"**
 **Download the credentials:**
 1. A popup shows your Client ID and Secret
 2. Click **"Download JSON"**
-3. Save the file as `credentials.json` in your `icandoit` folder
+3. Save the file as `credentials.json` in your `gmail-auto-reply` folder (the project folder you cloned)
 
 **Important:** The file must be named exactly `credentials.json` and placed in the same folder as `main.py`.
 
 ---
 
-## Part 3: Configure the Script (2 minutes)
+## Part 3: Configure the Script
 
 ### Step 1: Create Your Config File
 
 ```bash
-# Make sure you're in the icandoit folder
-cd ~/Developer/icandoit  # adjust path if needed
+# Make sure you're in the gmail-auto-reply folder
+cd ~/Developer/gmail-auto-reply
 
 # Copy the example config
 cp config.py.example config.py
@@ -184,13 +199,13 @@ AUTO_REPLY_MESSAGE = 'Got it! I can do it.'
 
 ---
 
-## Part 4: Run the Script (5 minutes)
+## Part 4: Run the Script
 
 ### Step 1: Start the Monitor
 
 ```bash
-# Make sure you're in the icandoit folder
-cd ~/Developer/icandoit  # adjust path if needed
+# Make sure you're in the gmail-auto-reply folder
+cd ~/Developer/gmail-auto-reply
 
 # Activate virtual environment
 source venv/bin/activate
@@ -332,12 +347,12 @@ pkill -f main.py
 ## Files Explained
 
 ```
-icandoit/
-├── main.py    # Main script
-├── config.py.example      # Example config (copy to config.py)
+gmail-auto-reply/
+├── main.py               # Main script
+├── config.py.example     # Example config (copy to config.py)
 ├── config.py             # YOUR SETTINGS (you create this!)
-├── requirements.txt       # Python dependencies
-├── credentials.json       # OAuth2 client credentials (YOU PROVIDE)
+├── requirements.txt      # Python dependencies
+├── credentials.json      # OAuth2 client credentials (YOU PROVIDE)
 ├── token.json            # Access token (AUTO-GENERATED)
 ├── .gitignore            # Protects secrets from git
 ├── README.md             # This file
