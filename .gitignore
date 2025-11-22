@@ -1,0 +1,16 @@
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# User configuration (sensitive info)
+config.py
+# BUT keep the example
+!config.py.example
+
+# Gmail credentials and tokens (SENSITIVE - DO NOT COMMIT)
+credentials.json
+token.json
+
+# OS files
+.DS_Store

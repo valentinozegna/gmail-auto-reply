@@ -1,0 +1,33 @@
+"""
+Configuration file for Gmail Auto-Reply Bot
+
+INSTRUCTIONS:
+1. Edit the values below with your information
+2. Save this file
+3. Run the script: python gmail_auto_reply.py
+
+IMPORTANT: Keep the quotes around the email addresses and message!
+"""
+
+# ============================================
+# USER CONFIGURATION
+# ============================================
+
+# The email address you want to monitor responses from
+TARGET_SENDER_EMAIL = '<senders_email>@gmail.com'
+
+# The auto-reply message to send
+AUTO_REPLY_MESSAGE = 'Test Response'
+
+# ============================================
+# ADVANCED SETTINGS (Optional)
+# ============================================
+
+# OAuth2 credentials file (usually no need to change)
+CREDENTIALS_FILE = 'credentials.json'
+
+# Token storage file (usually no need to change)
+TOKEN_FILE = 'token.json'
+
+# Gmail API scopes (DO NOT CHANGE unless you know what you're doing)
+GMAIL_SCOPES = ['https://mail.google.com/']
